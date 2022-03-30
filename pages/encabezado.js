@@ -12,6 +12,8 @@ function Encabezado() {
         filtroTexto={filtroTexto}
         onFiltroTextoCambio={setFiltroTexto}
         />
+
+
     </div>
 
 }

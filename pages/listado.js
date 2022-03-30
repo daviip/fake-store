@@ -27,7 +27,7 @@ function Listado() {
 
 return <div className={ styles.listado }>
         <h3>Listado productos</h3>
-
+        <div className={styles.tabla}>
         {
                     productos.map((producto) =>
                         <div key={ producto.id } className={ styles.producto } >
@@ -37,22 +37,8 @@ return <div className={ styles.listado }>
                         </div>
                     )
         }
+        </div>
         
-        {/* <table>
-        <tbody>
-            <tr>
-                {
-                    productos.map((producto) =>
-                            <td key={ producto.id }>
-                                <p><img src={ producto.image } width="100px" /></p>
-                                <p>{ producto.title }</p>
-                                <p>{ producto.price }€</p>
-                            </td>
-                    )
-                }
-                </tr>
-                </tbody>
-        </table> */}
     </div>
 
 }
