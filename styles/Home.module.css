@@ -18,3 +18,16 @@ left: 30%;
 width: 20%;
 height: 30%;
 }
+
+.producto{
+  /* background-color: lightgray; */
+  width: 30%;
+  padding: 1%;
+  border-radius: 2%;
+  border: solid 2px rgb(202, 134, 202);
+  margin-top:1% ;
+}
+
+.listado{
+  margin: 1%;
+}

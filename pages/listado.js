@@ -1,9 +1,19 @@
 import { useEffect, useState } from "react";
 import { url } from './api/hello';
+import SearchBar from "./busqueda";
+import styles from '../styles/Home.module.css'
+
 
 function Listado() {
 
     const [productos, setProductos] = useState([]);
+    const [filtroTexto, setFiltroTexto] = useState('');
+    const rows = [];
+
+    <SearchBar 
+    filtroTexto={filtroTexto}
+    onFiltroTextoCambio={setFiltroTexto}
+    />
 
     const cargaProductos = () => {
         fetch(url + "/products")
@@ -15,23 +25,34 @@ function Listado() {
         cargaProductos();
     }, []);
 
-    return <div>
+return <div className={ styles.listado }>
         <h3>Listado productos</h3>
-        <table>
+
+        {
+                    productos.map((producto) =>
+                        <div key={ producto.id } className={ styles.producto } >
+                                <p><img src={ producto.image } width="100px" /></p>
+                                <p>{ producto.title }</p>
+                                <p>{ producto.price }€</p>
+                        </div>
+                    )
+        }
+        
+        {/* <table>
         <tbody>
+            <tr>
                 {
                     productos.map((producto) =>
-                        <tr>
                             <td key={ producto.id }>
                                 <p><img src={ producto.image } width="100px" /></p>
                                 <p>{ producto.title }</p>
                                 <p>{ producto.price }€</p>
                             </td>
-                        </tr>
                     )
                 }
+                </tr>
                 </tbody>
-        </table>
+        </table> */}
     </div>
 
 }
