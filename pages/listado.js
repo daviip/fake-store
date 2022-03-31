@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { url } from './api/hello';
-import SearchBar from "./busqueda";
 import styles from '../styles/Home.module.css'
-import Producto from "./tablaproducto";
 
-
+// Preguntar porque ponerlo sin corchete
 function Listado(filtroTexto) {
 
     const [productos, setProductos] = useState([]);
@@ -17,7 +15,7 @@ function Listado(filtroTexto) {
     }
 
     productos.forEach((producto) => {
-        if(producto.title.toLowerCase().indexOf(filtroTexto.filtroTexto) === -1){
+        if(producto.title.toLowerCase().indexOf(filtroTexto.filtroTexto.toLowerCase()) === -1){
             return;
         }else{
             //Salta error por no tener key
@@ -34,7 +32,11 @@ return <div className={ styles.listado }>
             <div className={styles.tabla}>
             {
                     rows.map((producto) =>
-                        <Producto producto={producto} />
+                        <div key={ producto.id } className={ styles.producto } >
+                                <p><img src={ producto.image } width="100px" /></p>
+                                <p>{ producto.title }</p>
+                                <p>{ producto.price }€</p>
+                        </div>
                     )
             }
             </div>

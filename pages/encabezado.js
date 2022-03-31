@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 
 // Preguntar porque ponerlo entre corchete
-
 function Encabezado({filtroTexto, setFiltroTexto}) {
         const handleChange = (e) => {
             setFiltroTexto(e.target.value);
