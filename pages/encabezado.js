@@ -13,7 +13,6 @@ function Encabezado() {
         onFiltroTextoCambio={setFiltroTexto}
         />
 
-
     </div>
 
 }

@@ -1,12 +1,17 @@
+.container{
+  margin: 1%;
+}
+
 .header{
   background-color: rgb(202, 134, 202);
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: -1%;
 }
 
 .titulo{
-  margin-left: 1%;
+  margin-left: 0%;
 
 }
 
@@ -29,7 +34,7 @@
 }
 
 .listado{
-  margin: 1%;
+  margin: 0%;
 }
 
 

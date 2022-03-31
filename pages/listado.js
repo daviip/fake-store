@@ -26,9 +26,9 @@ function Listado() {
     }, []);
 
 return <div className={ styles.listado }>
-        <h3>Listado productos</h3>
-        <div className={styles.tabla}>
-        {
+            <h3>Listado productos</h3>
+            <div className={styles.tabla}>
+            {
                     productos.map((producto) =>
                         <div key={ producto.id } className={ styles.producto } >
                                 <p><img src={ producto.image } width="100px" /></p>
@@ -36,11 +36,9 @@ return <div className={ styles.listado }>
                                 <p>{ producto.price }€</p>
                         </div>
                     )
-        }
+            }
+            </div>
         </div>
-        
-    </div>
-
 }
 
 export default Listado
