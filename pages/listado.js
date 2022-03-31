@@ -28,7 +28,7 @@ function Listado(filtroTexto) {
     }, []);
 
 return <div className={ styles.listado }>
-            <h3>Listado productos</h3>
+            <h2>Listado productos</h2>
             <div className={styles.tabla}>
             {
                     rows.map((producto) =>
