@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { useState } from 'react'
 import styles from '../styles/Home.module.css'
 import Encabezado from './encabezado'
 import Listado from './listado'
-import FiltroProducto from './filtro'
 
 export default function Home() {
+  const [filtroTexto, setFiltroTexto] = useState('');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,8 +15,11 @@ export default function Home() {
       </Head>
 
       <main>
-        <Encabezado />
-        <Listado />
+        <Encabezado 
+          filtroTexto={filtroTexto}
+          setFiltroTexto={setFiltroTexto}
+        />
+        <Listado filtroTexto={filtroTexto} />
         
       </main>
 
