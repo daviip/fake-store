@@ -16,17 +16,25 @@
 }
  
 .tabla{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .producto{
   padding: 1%;
   border-radius: 2%;
   border: solid 2px rgb(202, 134, 202);
-  width: 22%;
-  margin-bottom: 2%;
+  margin: 2%;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
+  text-align: center;
+}
+
+.cen{
+  align-self: center;
 }
 
 .listado{
@@ -34,17 +42,19 @@
 }
 
 
-@media (max-width:830px){
+@media screen and (max-width:830px){
   
-  .producto{
-    width: 40%;
-    }
+  .tabla{
+    display: grid;
+    grid-template-columns:1fr 1fr;
   }
+}
 
-  @media (max-width:450px){
+@media screen and (max-width:450px){
   
-.producto{
-  width: 80%;
+  .tabla{
+    display: grid;
+    grid-template-columns:1fr;
   }
 }
 

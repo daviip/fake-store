@@ -33,9 +33,9 @@ return <div className={ styles.listado }>
             {
                     rows.map((producto) =>
                         <div key={ producto.id } className={ styles.producto } >
-                                <p><img src={ producto.image } width="100px" /></p>
-                                <p>{ producto.title }</p>
-                                <p>{ producto.price }€</p>
+                                <p className={ styles.cen } ><img src={ producto.image } width="100px" /></p>
+                                <p className={ styles.cen } >{ producto.title }</p>
+                                <p className={ styles.cen } >{ producto.price }€</p>
                         </div>
                     )
             }
