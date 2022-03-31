@@ -2,19 +2,19 @@ import styles from '../styles/Home.module.css'
 
 
 // Preguntar porque ponerlo entre corchete
-function Encabezado({filtroTexto, setFiltroTexto}) {
+function Header({filterText, setFilterText}) {
         const handleChange = (e) => {
-            setFiltroTexto(e.target.value);
+            setFilterText(e.target.value);
         }
         
 return (
     <div className={ styles.header }>
-        <h1 className={ styles.titulo }>Fake Store</h1>
+        <h1 className={ styles.h1title }>Fake Store</h1>
         <input 
         type="text" 
-        value={filtroTexto.filtroTexto} 
+        value={filterText.filterText} 
         placeholder="Buscando..."         
-        className={ styles.buscador }
+        className={ styles.search }
         onChange={handleChange} 
         />
 
@@ -22,6 +22,6 @@ return (
     )
 }
 
-export default Encabezado
+export default Header
 
 

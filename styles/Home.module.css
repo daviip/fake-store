@@ -1,21 +1,16 @@
-.container{
-  margin: 1%;
-}
-
 .header{
   background-color: rgb(202, 134, 202);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  margin: -1%; 
 }
 
-.titulo{
-  margin-left: 1%;
+.h1title{
+  margin-left: 1rem;
 
 }
  
-.tabla{
+.table{
   /* display: flex;
   flex-wrap: wrap;
   justify-content: space-around; */
@@ -23,28 +18,34 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.producto{
-  padding: 1%;
-  border-radius: 2%;
+.product{
+  padding: 1rem;
+  border-radius: 0.75rem;
   border: solid 2px rgb(202, 134, 202);
-  margin: 2%;
+  margin: 0.8rem;
   display: grid;
   grid-template-rows: 1fr 0.5fr 0.5fr;
-  text-align: center;
 }
 
-.cen{
+.img{
   align-self: center;
+  justify-self: center;
 }
 
-.listado{
-  margin: 0%;
+.title{
+  align-self: flex-end;
+}
+
+.price{
+  align-self: flex-start;
+  color: brown;
+  font-weight: bold;
 }
 
 
 @media screen and (max-width:830px){
   
-  .tabla{
+  .table{
     display: grid;
     grid-template-columns:1fr 1fr;
   }
@@ -52,7 +53,7 @@
 
 @media screen and (max-width:450px){
   
-  .tabla{
+  .table{
     display: grid;
     grid-template-columns:1fr;
   }
