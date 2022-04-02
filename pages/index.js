@@ -6,6 +6,7 @@ import List from './list'
 
 export default function Home() {
   const [filterText, setFilterText] = useState('');
+  const active = false;
 
   return (
     <div className={styles.container}>
@@ -15,12 +16,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header 
+        <Header
           filterText={filterText}
           setFilterText={setFilterText}
+          active={active}
         />
         <List filterText={filterText} />
-        
+
       </main>
 
       <footer className={styles.footer}>

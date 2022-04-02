@@ -1,0 +1,21 @@
+.pages{
+    display: grid;
+    margin: 1rem;
+}
+
+.imgP{
+    justify-self: center;
+    border: solid 0.5rem rgb(202, 134, 202);
+    border-radius: 2rem;
+    padding: 1rem;    
+}
+
+.priceP{
+    justify-self: center;
+    font-weight: 700;
+    font-size: large;
+}
+
+.descriptionP{
+    margin-left: 1rem;
+}
