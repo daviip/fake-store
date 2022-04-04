@@ -1,19 +1,10 @@
-import { useRouter } from "next/router"
 import { url } from "./constants"
-import useSWR from "swr"
-import Header from "./header"
+import Header from "../components/header"
 import styles from "../styles/Product.module.css"
 
-const fetcher = (...args) => fetch(...args).then(res => res.json())
 
-export default function Product(filterText) {
-    const router = useRouter()
-    const { id } = router.query
-    console.log(id)
-    const { data, error } = useSWR(url + "/products/" + id, fetcher)
-    const active = true
-
-    if (error) return <div>failed to load</div>
+export default function Product({data, id}) {
+        
     if (!data) {
         return <div>loading...</div>
     } else {
@@ -34,6 +25,13 @@ export default function Product(filterText) {
             </div>
         )
     }
-
-
 }
+
+export async function getServerSideProps(context){
+    const {params} = context
+    const {id} = params
+    console.log(id)
+    const res = await fetch(url + '/products/' + id)
+    const data = await res.json()
+    return { props: { data, id } }
+  }

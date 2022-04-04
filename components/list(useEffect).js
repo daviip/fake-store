@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { url } from "./constants";
+import { url } from "../pages/constants";
 import styles from '../styles/Home.module.css'
 
 // Preguntar porque ponerlo sin corchete

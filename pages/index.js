@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import { url } from "./constants"
 import { useState } from 'react'
 import styles from '../styles/Home.module.css'
-import Header from './header'
-import List from './list'
+import Header from '../components/header'
+import List from '../components/list'
 
-export default function Home() {
+export default function Home({data}) {
   const [filterText, setFilterText] = useState('');
   const active = false;
 
@@ -21,8 +22,10 @@ export default function Home() {
           setFilterText={setFilterText}
           active={active}
         />
-        <List filterText={filterText} />
-
+        <List 
+        filterText={filterText}
+        data={data}
+         />
       </main>
 
       <footer className={styles.footer}>
@@ -39,4 +42,11 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps(context){
+  const res = await fetch(url + '/products')
+  const data = await res.json()
+  console.log(data)
+  return { props: { data } }
 }
