@@ -1,4 +1,4 @@
-import { url } from "./constants"
+import url from "./constants"
 import Header from "../components/header"
 import styles from "../styles/Product.module.css"
 import Image from "next/image"
