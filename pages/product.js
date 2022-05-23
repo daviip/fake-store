@@ -1,4 +1,3 @@
-import url from "./constants"
 import Header from "../components/header"
 import styles from "../styles/Product.module.css"
 import Image from "next/image"
@@ -32,7 +31,7 @@ export async function getServerSideProps(context){
     const {params} = context
     const {id} = params
     console.log(id)
-    const res = await fetch(url + '/products/' + id)
+    const res = await fetch('https://fakestoreapi.com/products/' + id)
     const data = await res.json()
     return { props: { data, id } }
   }

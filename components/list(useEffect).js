@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { url } from "../pages/constants";
 import styles from '../styles/Home.module.css'
 
 // Preguntar porque ponerlo sin corchete
@@ -10,7 +9,7 @@ function List(filterText) {
 
     useEffect(() => {
         setLoading(true)
-        fetch(url + "/products")
+        fetch('https://fakestoreapi.com/products')
         .then((res) => res.json())
         .then((data) => {
             setProducts(data)

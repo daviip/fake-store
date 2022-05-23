@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import url  from "./constants"
 import { useState } from 'react'
 // import styles from '../styles/Home.module.css'
 import Header from '../components/header'
@@ -34,7 +33,7 @@ export default function Home({data}) {
 }
 
 export async function getServerSideProps(context){
-  const res = await fetch(url + '/products')
+  const res = await fetch('https://fakestoreapi.com/products')
   const data = await res.json()
   console.log(data)
   return { props: { data } }
