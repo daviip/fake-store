@@ -39,7 +39,7 @@ return <div className={ styles.listing }>
             {
                     rows.map((product) =>
                         <div key={ product.id } className={ styles.product } >
-                                <p className={ styles.img } ><img src={ product.image } width="100px" /></p>
+                                {/* <p className={ styles.img } ><img src={ product.image } width="100px" /></p> */}
                                 <p className={ styles.title } >{ product.title }</p>
                                 <p className={ styles.price } >{ product.price }€</p>
                         </div>

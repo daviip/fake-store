@@ -1,6 +1,7 @@
 import { url } from "./constants"
 import Header from "../components/header"
 import styles from "../styles/Product.module.css"
+import Image from "next/image"
 
 
 export default function Product({data, id}) {
@@ -17,7 +18,7 @@ export default function Product({data, id}) {
                 />
                 <div className={styles.pages}>
                     <h2 className={styles.titleP}>{data.title}</h2>
-                    <p className={styles.imgP}><img src={data.image} width="200px" /></p>
+                    <p className={styles.imgP}><Image src={data.image} width="200px" alt={data.title}/></p>
                     <p className={styles.priceP}>{data.price}€</p>
                     <h3>Description</h3>
                     <span className={styles.descriptionP}>{data.description}</span>

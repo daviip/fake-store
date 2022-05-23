@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -24,10 +25,11 @@ function List({filterText, data}) {
                 rows.map((product) =>
                     <Link 
                     href="/[id]" 
-                    as={`/${product.id}`}
+                    as={`/${product.id}`} passHref
+                    key={product.id}
                     >
                         <div key={product.id} className={styles.product} >
-                            <p className={styles.img} ><img src={product.image} width="100px" /></p>
+                            <p className={styles.img} ><Image src={product.image} width="100px" alt={product.title}/></p>
                             <p className={styles.title} >{product.title}</p>
                             <p className={styles.price} >{product.price}€</p>
                         </div>

@@ -10,7 +10,7 @@ function Header({ filterText, setFilterText, active }) {
 
     return (
         <div className={styles.header}>
-            <Link href={"/"}>
+            <Link href={"/"} passHref>
                 <h1 className={styles.h1title}>Fake Store</h1>
             </Link>
             <input
