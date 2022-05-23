@@ -24,7 +24,7 @@ function List({filterText, data}) {
             {
                 rows.map((product) =>
                     <Link 
-                    href="/[id]" 
+                    href="/product" 
                     as={`/${product.id}`} passHref
                     key={product.id}
                     >
